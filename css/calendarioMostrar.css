@@ -1,0 +1,55 @@
+.cMostrar{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255,255,255,0.5);
+	z-index: 1000;
+	text-align: center;
+}
+.cMostrar .titulo-mes{
+	font-size: 1.8rem;
+}
+.cMostrar .btnArrow{
+	cursor: pointer;
+}
+.cMostrar th,td{
+	padding: 10px;
+	border-radius: 5px;
+}
+.cMostrar th{
+	background: rgba(255,255,255,0.9);
+	color: #000;
+	font-family: "nexa";
+	border: 1px solid #555;
+}
+.cMostrar td{
+	cursor: pointer;
+}
+.cMostrar .otroMes{
+	//background: #333;
+	color: #fff;
+}
+.cMostrar .mesActual{
+	background: rgba(255,255,255,0.8);
+	color: #000;
+	border: 1px solid red;
+	font-family: "maven";
+}
+.cMostrar .disponible{
+	border: 1px solid green;
+}
+.cMostrar .disponible2{
+	border: 1px solid green;
+}
+.cMostrar .disponible3{
+	border: 1px solid green;
+}
+.none{
+	display: none;
+}

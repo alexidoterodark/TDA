@@ -1,0 +1,30 @@
+@font-face{
+	font-family: "nexa";
+	src: url(../fonts/NexaSlabRegular.ttf);
+}
+@font-face{
+	font-family: "maven";
+	src: url(../fonts/MavenProRegular.ttf);
+}
+*{
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.body{
+	width: 100%;
+	height: 100%;
+}
+.body .titulo2{
+	font-family: "maven";
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 5%;
+	background: #450;
+	color: #fff;
+	text-align: center;
+}

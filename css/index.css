@@ -1,0 +1,798 @@
+@import url("calendarioMostrar.css");
+@font-face{
+	font-family: "nexa";
+	src: url(../fonts/NexaSlabRegular.ttf);
+}
+@font-face{
+	font-family: "maven";
+	src: url(../fonts/MavenProRegular.ttf);
+}
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body{
+	font-family: sans-serif;
+	position: relative;
+	padding: 10px;
+}
+.flex{
+	display: flex;
+}
+.jcc{
+	justify-content: center;
+}
+.jcsb{
+	justify-content: space-between;
+}
+.jcsa{
+	justify-content: space-around;
+}
+.aic{
+	align-items: center;
+}
+header{
+	width: 100%;
+	height: 95vh;
+	position: relative;
+}
+.header-fondo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 95vh;
+}
+.header-fondo video{
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+.menu{
+	width: 100%;
+	height: 50px;
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+	box-shadow: 0 1px rgba(0,0,0,0.1),0 3px rgba(0,0,0,0.1),0 5px rgba(0,0,0,0.1),0 7px rgba(0,0,0,0.1);
+	z-index: 1;
+}
+.menu .menu-1{
+	/* css */
+}
+.menu .menu-1 a{
+	text-decoration: none;
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-family: "maven";
+	padding: 10px;
+	margin: 0 5px;
+	border-radius: 5px;
+	transition: all .5s;
+}
+.menu .menu-1 a:before{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: -100%;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	transition: all .5s;
+}
+.menu .menu-1 a:hover:before{
+	left: 0;
+}
+.menu .menu-1 a:after{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 100%;
+	height: 1px;
+	background: #fff;
+	transition: all .5s;
+}
+.menu .menu-1 a:hover:after{
+	left: 0;
+}
+.menu .menu-2 a{
+	padding: 10px;
+	float: right;
+	color: #fff;
+	font-size: 22px;
+	transition: all .5s;
+}
+.menu .menu-2 .user:hover{
+	color: #B98644;
+}
+.menu .menu-2 .phone:hover{
+	color: #B98644;
+}
+.menu-2 >li {
+    float: right;
+    padding: 0px;    
+	font-size: 14px;
+    margin: 15px 1rem 10px 5px;
+    list-style:none;
+}
+header .header-main{
+	width: 100%;
+	height: 80%;
+	flex-wrap: wrap;
+	text-align: center;
+	color: #fff;
+}
+header .header-main .bordes{
+	padding: 5%;
+	padding-bottom: 2%;
+	position: relative;
+}
+header .header-main .bordes p{
+	font-family: sans-serif;
+	font-size: 1.8rem;
+}
+header .header-main .bordes h1{
+	font-family: "nexa";
+	font-size: 5rem;
+}
+header .header-main .bordes span{
+	position: absolute;
+}
+header .header-main .bordes .borde-top-left{
+	background: #fff;
+	width: 30px;
+	height: 3px;
+	top: 0;
+	left: 0;
+}
+header .header-main .bordes .borde-top-left:before{
+	content: '';
+	position: absolute;
+	background: #fff;
+	width: 3px;
+	height: 30px;
+	top: 0;
+	left: 0;
+}
+header .header-main .bordes .borde-top-right{
+	background: #D69C4F;
+	width: 30px;
+	height: 5px;
+	top: 0;
+	right: 0;
+}
+header .header-main .bordes .borde-top-right:before{
+	content: '';
+	position: absolute;
+	background: #D69C4F;
+	width: 5px;
+	height: 30px;
+	top: 0;
+	right: 0;
+}
+header .header-main .bordes .borde-bottom-left{
+	background: #D69C4F;
+	width: 30px;
+	height: 5px;
+	bottom: 0;
+	left: 0;
+}
+header .header-main .bordes .borde-bottom-left:before{
+	content: '';
+	position: absolute;
+	background: #D69C4F;
+	width: 5px;
+	height: 30px;
+	bottom: 0;
+	left: 0;
+}
+header .header-main .bordes .borde-bottom-right{
+	background: #fff;
+	width: 30px;
+	height: 3px;
+	bottom: 0;
+	right: 0;
+}
+header .header-main .bordes .borde-bottom-right:before{
+	content: '';
+	position: absolute;
+	background: #fff;
+	width: 3px;
+	height: 30px;
+	bottom: 0;
+	right: 0;
+}
+/*-------------------fecha-----------------------*/
+
+#diaE{
+  font-size:300%;
+  margin: -20px 3px 0px 10px;
+  padding: 0;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+#diaS{
+  font-size:300%;
+  margin: -20px 3px 0px 10px;
+  padding: 0;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+#mesE{
+  margin: 0px 3px;
+  padding: 0;
+  float: left;
+  position: relative;
+}
+#añoE{
+  margin: 0px 10px;
+  padding: 0;
+  float: left;
+  position: relative;
+  font-size:110%;
+}
+#nombE{
+  margin: 0;
+  padding: 0;
+  float: left;
+  position: relative;
+}
+#mesS{
+  margin: 0px 3px;
+  padding: 0;
+  float: left;
+  position: relative;
+}
+#añoS{
+  margin: 0px 10px;
+  padding: 0;
+  float: left;
+  position: relative;
+  font-size:110%;
+}
+#nombS{
+  margin: 0;
+  padding: 0;
+  float: left;
+  position: relative;
+}
+.fontcap3{
+  margin: 5px 0px 0px 0px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+header .header-main .fecha{
+	position: absolute;
+	width: 100%;
+	height: 90px;
+	left: 0;
+	right: 0;
+	bottom: -20px;
+}
+header .header-main .fecha .controles-fecha{
+	width: 70%;
+	height: 100%;
+	background: #000;
+	border-radius: 10px;
+	min-width: 800px;
+}
+header .header-main .fecha .controles-fecha form{
+	width: 100%;
+	padding: 0 5%;
+}
+header .header-main .fecha .controles-fecha form .destinos {
+	padding: 10px 5px;
+	border: none;
+	outline: none;
+	width: 200px;
+	background: none;
+	border-bottom: 1px solid #fff;
+	font-size: 0.8rem;
+	color: #fff;
+}
+header .header-main .fecha .controles-fecha form .calendario{
+	padding: 5px;
+	text-align: left;
+}
+header .header-main .fecha .controles-fecha form .btn-bot{
+	padding: 10px;
+}
+header .header-main .fecha .controles-fecha form .entrada{
+	padding-right: 10px;
+	margin: 0;
+}
+header .header-main .fecha .controles-fecha form .entrada , .salida{
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+header .header-main .fecha .controles-fecha form .num-day{
+	font-size: 2rem;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+header .header-main .fecha .controles-fecha form .day{
+	display: block;
+	padding: 0;
+	margin: 0;
+}
+header .header-main .fecha .controles-fecha form .fecha-md{
+	padding-left: 5px;
+	font-size: 0.9rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	min-width: 60px;
+}
+header .header-main .fecha .controles-fecha form .mes , .anio{
+	font-weight: bold;
+	margin: 0;	
+	padding: 0;	
+}
+header .header-main .fecha .controles-fecha form .hoteles{
+	padding: 10px 5px;
+	border: none;
+	outline: none;
+	background: none;
+	border-bottom: 1px solid #fff;
+	font-size: 0.8rem;
+	color: #fff;
+}
+header .header-main .fecha .controles-fecha form .buscar{
+	font-size: 0.8rem;
+	font-weight: bold;
+	background: #d69c4f;
+	color: #fff;
+	border: none;
+	outline: none;
+	padding: 15px 30px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+/*----------------servicios-----------------*/
+.servicios{
+	margin-top: 20px;
+	flex-wrap: wrap;
+}
+.servicios .destacado{
+	padding: 1rem;
+}
+.servicios .destacado i{
+	color: #D69C4F;
+	font-size: 3.5em;
+	padding-right: 5%;
+}
+.servicios .destacado span{
+	display: block;
+	font-size: 1.5rem;
+}
+.ocultarInput{
+	display: none;
+}
+.fixed{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+}
+/*---------------logo y chat----------------------*/
+.chat{
+  position: relative;
+  float: right;
+  top: 91%;
+  right: 0;
+  position: fixed;
+  width: auto;
+  height: auto;
+  color:#fff;
+  background: #000;
+  padding: 0px 5px;
+  margin: 0px;
+  z-index: 2;
+}
+#chat{
+  padding: 0px;
+  margin: 7px;
+}
+.LogoHotel{
+  width: 13%;
+  height: 0;
+  border-left: 0px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 120px solid black;
+  position: relative;
+  float: left;
+  top: 35%;
+  left: -1%;
+  color: #fff;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+}
+#hotelca{
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+.trapecio{
+  width: 40%;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 50px solid white;
+  padding: auto;
+  margin: 9px auto;
+  text-align: center;
+}
+#ab{
+  color: orange;
+  padding: 0px;
+    margin: 0px 5px;
+}
+/*----------fechas ---------------*/
+
+
+.xkcasaA{
+  width: 40%;
+  height: 500px;
+  position: absolute;
+  left: 100px;
+  float: left;
+  margin: 70px 0px 0px 0px;
+  
+}
+.xkcasaA h1{
+	margin: 10px;
+	font-family: "nexa";
+	font-size: 3.7rem;
+}
+.xkcar{
+  width: 0;
+  height: 150px;
+  border: 1px solid #D69C4F;
+  position: absolute;
+  float: left;
+}
+.rptaxkca{
+	margin: 20px;
+}
+.trapecioimg{
+	position: absolute;
+  	float: left;
+  	left: 400px;
+  	top: 1290px;
+}
+.xkca img{
+	width: 50%;
+	height: 600px;
+	right: 10px;
+	position: absolute;
+  	float: right;
+  	margin: 20px;
+}
+.preguntaxkca{
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 40px;
+  float: left;
+  margin: 0;
+  top: 860px;
+  color: #D69C4F;
+}
+.beneficios h2{
+	font-family: "nexa";
+	font-size: 2rem;
+	margin: 20px 0px;
+}
+.bene {
+	margin: 60.8% 0px 0px 0px;
+	width: 8%;
+  	height: auto;
+  	position: relative;
+  	float: left;
+  	left: 110px;	
+}
+.bene p{
+	color: #D69C4F;
+	margin: 20px 0px;
+}
+.beneficios{
+	margin: 58% 5% 0px 5%;
+	width: 90%;
+	height: 10%;
+}
+.grupo{
+	border: 2px solid #D69C4F;
+	padding: 4px 2%  4px 2% ;
+}
+.leyenda{
+	padding: 40px 0px 0px 0px;
+}
+.listarbene{
+	float: left;
+	position: relative;
+	margin: 5px 10px;
+}
+.listarbene i{
+	font-size: 4rem;
+	color: #D69C4F;
+}
+.listarbene p{
+	position: relative;
+	float: right;
+	font-size: 1.1rem;
+	font-family: "nexa";
+	padding: 5px 0px 0px 0px;
+}
+.carrusells{
+	width: 100%;
+	height: 60%;
+	background: #222;
+	margin: 0;
+	padding: 0;
+}
+.biñetah1 p{
+	color: #D69C4F;
+	position: relative;
+	float: left;
+	width: auto;
+  	height: auto;
+	padding: 15px 0px 0px 0px;
+	margin: 0px 9px 0px 5px;
+}
+.biñetah1{
+	width: 100%;
+  	height: 25%;
+  	margin: 0;
+  	padding: 5%;
+ }
+ .biñetah1 h1{
+	color: #fff;
+	font-size: 3.3rem;
+	font-family: "nexa";
+	position: relative;
+	float: left;
+}
+.cambiari{
+	width: 80%;
+	height: 80%;
+	margin:4% 9%;
+	padding: 0;
+}
+form img{
+
+	text-align: center;
+}
+.cambiari img{
+	width: 500px;
+	height: 500px;
+	text-align: center;
+}
+.linearec{
+	width: 0;
+	height: 450px;
+	border: 1px solid #fff;
+}
+.cambiarcaru{
+	color: #fff;
+	position: relative;
+	float: right;
+	top: -470px;
+}
+.webrs{
+	width: 100%;
+	height: 197.8px;
+	background: #222;
+}
+.RS{
+	width: 50%;
+	position: relative;
+	float: left;
+	font-size: 3.3rem;
+	font-family: "nexa";
+	color: #D69C4F;
+	padding: 4%;
+}
+.RS i{
+	color: #D69C4F;
+}
+.suscribirse h5{
+	font-size: 2rem;
+	font-family: "nexa";
+}
+.suscribirse{
+	width: 50%;;
+	background: #000;
+	position: relative;
+	float: right;
+	right: 0;
+	color: #fff;
+	padding: 2.5%;
+}
+.correo{
+	padding: 10px 5px;
+	border: none;
+	outline: none;
+	width: 340px;
+	background: none;
+	border-bottom: 1px solid #fff;
+	font-size: 1rem;
+	color: #fff;
+}
+.mediospago{
+	width: 100%;
+	height: auto;
+	margin: -15px 0 0 0;
+	padding: 0;
+	position: relative;
+	float: left;
+	background: #141416;
+}
+.logopagos{
+	position: relative;
+	float: right;
+	padding: 2% 5%;
+	color: #fff;
+}
+.logocasa{
+	position: relative;
+	float: left;
+	text-align: center;
+	margin: 2% 3%;
+	width: 350px;
+	height: auto;
+}
+.lgcab{
+	width: 190px;
+	height: 40px;
+}
+.saber{
+	background: #141416;
+	width: 100%;
+	height: 560px;
+	color: #fff;
+}
+.saber p{
+	text-align: center;
+}
+.container p{
+	text-align: center;
+	font-size: 1.3rem;
+	margin: 0;
+	padding: 0;
+}
+.containero{
+	text-align: center;
+	font-size: .8rem;
+	margin: 0;
+	padding: 0;
+}
+.encageh{
+	width: 100%;
+	height: 403px;
+	background: #F5F5F5;
+	margin: 5px;
+	border: 2px solid #E2E2E2;
+}
+.encagei{
+	width: 45%;
+	height: 92%;
+	position: absolute;
+	float: left;
+}
+.lugarT{
+	width: 100%;
+	height: 30%;
+	position: relative;
+	float: right;
+	text-align: center;
+	font-family: "nexa";
+}
+.descripcionT{
+	width: 100%;
+	height: 220px;
+	position: relative;
+	float: right;
+	padding: 0;
+	text-align: center;
+}
+.descripcionT p{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	float: right;
+	padding: 10px;
+	text-align: center;
+}
+.googlemaps{
+	width: 30%;
+	height: 70px;
+	position: relative;
+	margin: 0;
+	padding: 20px 10px 0px 20px;
+	float: left;
+}
+.terminoscond{
+	width: 45%;
+	height: auto;
+	position: relative;
+	float: right;
+}
+.reservarhotel{
+	width: 45%;
+	height: auto;
+	position: relative;
+	float: right;
+}
+.datoshotel{
+	width: 44.5%;
+	height: auto;
+	position: relative;
+	float: right;
+}
+.cena .nav{
+	width: 100%;
+	height: auto;
+}
+/*hhhhhhhhhhhhhhhhhhhhh*/
+.barramenu{
+	width: 100%;
+	height: auto;
+	background: #000;
+}
+.condiydats{
+	border: 1px solid red;
+	width: 100%;
+	height: 1550px;
+}
+.condi{
+	width: 49%;
+	height: auto;
+	position: relative;
+	float: left;
+}
+.datospers{
+	width: 49%;
+	height: auto;
+	position: relative;
+	float: right;
+}
+
+@media(max-width: 1000px) {
+	.LogoHotel{
+		display: none;
+	}
+	#hotelca{
+	  display: none;
+	}
+	.trapecio{
+	  display: none;
+	}
+	
+ }
+ @media(max-width: 1100px){
+ 	.controles-fecha{
+		width: 100%
+		height:auto;
+	}
+ }
+ 
